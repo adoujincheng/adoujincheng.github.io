@@ -54,7 +54,7 @@ function tonav() {
     position = scroll;
   });
   //修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText = document.title.split(" | 陈锦程")[0];
+  document.getElementById("page-name").innerText = document.title.split(" | Fomalhaut🥝")[0];
 }
 
 function scrollToTop() {
@@ -299,35 +299,35 @@ document.addEventListener('pjax:complete', showWelcome);
 //----------------------------------------------------------------
 
 /* 微博热搜 start */
-// document.addEventListener('pjax:complete', getWeibo);
-// document.addEventListener('DOMContentLoaded', getWeibo);
+document.addEventListener('pjax:complete', getWeibo);
+document.addEventListener('DOMContentLoaded', getWeibo);
 
-// function getWeibo() {
-//   fetch('').then(data => data.json()).then(data => {  // 这里要写上你的API!!!
-//     let html = '<style>.weibo-new{background:#ff3852}.weibo-hot{background:#ff9406}.weibo-jyzy{background:#ffc000}.weibo-recommend{background:#00b7ee}.weibo-adrecommend{background:#febd22}.weibo-friend{background:#8fc21e}.weibo-boom{background:#bd0000}.weibo-topic{background:#ff6f49}.weibo-topic-ad{background:#4dadff}.weibo-boil{background:#f86400}#weibo-container{overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#weibo-container::-webkit-scrollbar{display:none}.weibo-list-item{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.weibo-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}.weibo-num{float:right}.weibo-hotness{display:inline-block;padding:0 6px;transform:scale(.8) translateX(-3px);color:#fff;border-radius:8px}</style>'
-//     html += '<div class="weibo-list">'
-//     let hotness = {
-//       '爆': 'weibo-boom',
-//       '热': 'weibo-hot',
-//       '沸': 'weibo-boil',
-//       '新': 'weibo-new',
-//       '荐': 'weibo-recommend',
-//       '音': 'weibo-jyzy',
-//       '影': 'weibo-jyzy',
-//       '剧': 'weibo-jyzy',
-//       '综': 'weibo-jyzy'
-//     }
-//     for (let item of data) {
-//       html += '<div class="weibo-list-item"><div class="weibo-hotness ' + hotness[(item.hot || '荐')] + '">' + (item.hot || '荐') + '</div>'
-//         + '<span class="weibo-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer" style="color:#a08ed5">' + item.title + '</a></span>'
-//         + '<div class="weibo-num"><span>' + item.num + '</span></div></div>'
-//     }
-//     html += '</div>'
-//     document.getElementById('weibo-container').innerHTML = html
-//   }).catch(function (error) {
-//     console.log(error);
-//   });
-// }
+function getWeibo() {
+  fetch('').then(data => data.json()).then(data => {  // 这里要写上你的API!!!
+    let html = '<style>.weibo-new{background:#ff3852}.weibo-hot{background:#ff9406}.weibo-jyzy{background:#ffc000}.weibo-recommend{background:#00b7ee}.weibo-adrecommend{background:#febd22}.weibo-friend{background:#8fc21e}.weibo-boom{background:#bd0000}.weibo-topic{background:#ff6f49}.weibo-topic-ad{background:#4dadff}.weibo-boil{background:#f86400}#weibo-container{overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#weibo-container::-webkit-scrollbar{display:none}.weibo-list-item{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.weibo-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}.weibo-num{float:right}.weibo-hotness{display:inline-block;padding:0 6px;transform:scale(.8) translateX(-3px);color:#fff;border-radius:8px}</style>'
+    html += '<div class="weibo-list">'
+    let hotness = {
+      '爆': 'weibo-boom',
+      '热': 'weibo-hot',
+      '沸': 'weibo-boil',
+      '新': 'weibo-new',
+      '荐': 'weibo-recommend',
+      '音': 'weibo-jyzy',
+      '影': 'weibo-jyzy',
+      '剧': 'weibo-jyzy',
+      '综': 'weibo-jyzy'
+    }
+    for (let item of data) {
+      html += '<div class="weibo-list-item"><div class="weibo-hotness ' + hotness[(item.hot || '荐')] + '">' + (item.hot || '荐') + '</div>'
+        + '<span class="weibo-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer" style="color:#a08ed5">' + item.title + '</a></span>'
+        + '<div class="weibo-num"><span>' + item.num + '</span></div></div>'
+    }
+    html += '</div>'
+    document.getElementById('weibo-container').innerHTML = html
+  }).catch(function (error) {
+    console.log(error);
+  });
+}
 
 /* 微博热搜 end */
 
@@ -335,12 +335,12 @@ document.addEventListener('pjax:complete', showWelcome);
 
 /* 禁用f12与按键防抖 start */
 // 防抖全局计时器
-// let TT = null;    //time用来控制事件的触发
-// // 防抖函数:fn->逻辑 time->防抖时间
-// function debounce(fn, time) {
-//   if (TT !== null) clearTimeout(TT);
-//   TT = setTimeout(fn, time);
-// }
+let TT = null;    //time用来控制事件的触发
+// 防抖函数:fn->逻辑 time->防抖时间
+function debounce(fn, time) {
+  if (TT !== null) clearTimeout(TT);
+  TT = setTimeout(fn, time);
+}
 
 // 复制提醒
 document.addEventListener("copy", function () {
@@ -1119,15 +1119,21 @@ function createtime1() {
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到陈锦程の小家!`,
+    `欢迎来到Fomalhaut🥝の小家!`,
     `Future is now 🍭🍭🍭`,
     `
-                                 
+        
+███████  ██████  ███    ███  █████  ██      ██   ██  █████  ██    ██ ████████ 
+██      ██    ██ ████  ████ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
+█████   ██    ██ ██ ████ ██ ███████ ██      ███████ ███████ ██    ██    ██    
+██      ██    ██ ██  ██  ██ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
+██       ██████  ██      ██ ██   ██ ███████ ██   ██ ██   ██  ██████     ██   
+                                              
 `,
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2022 By 陈锦程",
+    "©2022 By Fomalhaut",
   ];
 
   setTimeout(
@@ -1166,7 +1172,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by 陈锦程 %c 你正在访问陈锦程の小家",
+      "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1276,8 +1282,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| 陈锦程") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('陈锦程的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
     new Vue({
       data: function () {
         this.$notify({
@@ -2774,39 +2780,39 @@ class Cursor {
 
 //----------------------------------------------------------------
 
-// /* 页脚计时器 start */
-// var now = new Date();
-// function createtime() {
-//   // 当前时间
-//   now.setTime(now.getTime() + 1000);
-//   var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
-//   var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
-//   var unit = (dis / 149600000).toFixed(6);  // 天文单位
-//   // 网站诞生时间
-//   var grt = new Date("08/09/2022 00:00:00");
-//   var days = (now - grt) / 1e3 / 60 / 60 / 24,
-//     dnum = Math.floor(days),
-//     hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
-//     hnum = Math.floor(hours);
-//   1 == String(hnum).length && (hnum = "0" + hnum);
-//   var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
-//     mnum = Math.floor(minutes);
-//   1 == String(mnum).length && (mnum = "0" + mnum);
-//   var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
-//     snum = Math.round(seconds);
-//   1 == String(snum).length && (snum = "0" + snum);
-//   let currentTimeHtml = "";
-//   (currentTimeHtml =
-//     hnum < 18 && hnum >= 9
-//       ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-//       : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
-//     document.getElementById("workboard") &&
-//     (document.getElementById("workboard").innerHTML = currentTimeHtml);
-// }
-// // 设置重复执行函数，周期1000ms
-// setInterval(() => {
-//   createtime();
-// }, 1000);
+/* 页脚计时器 start */
+var now = new Date();
+function createtime() {
+  // 当前时间
+  now.setTime(now.getTime() + 1000);
+  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
+  var unit = (dis / 149600000).toFixed(6);  // 天文单位
+  // 网站诞生时间
+  var grt = new Date("08/09/2022 00:00:00");
+  var days = (now - grt) / 1e3 / 60 / 60 / 24,
+    dnum = Math.floor(days),
+    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
+    hnum = Math.floor(hours);
+  1 == String(hnum).length && (hnum = "0" + hnum);
+  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+    mnum = Math.floor(minutes);
+  1 == String(mnum).length && (mnum = "0" + mnum);
+  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+    snum = Math.round(seconds);
+  1 == String(snum).length && (snum = "0" + snum);
+  let currentTimeHtml = "";
+  (currentTimeHtml =
+    hnum < 18 && hnum >= 9
+      ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
+      : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+    document.getElementById("workboard") &&
+    (document.getElementById("workboard").innerHTML = currentTimeHtml);
+}
+// 设置重复执行函数，周期1000ms
+setInterval(() => {
+  createtime();
+}, 1000);
 
 /*页脚计时器 end */
 
