@@ -54,7 +54,7 @@ function tonav() {
     position = scroll;
   });
   //修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText = document.title.split(" | Fomalhaut🥝")[0];
+  document.getElementById("page-name").innerText = document.title.split(" | 陈锦程")[0];
 }
 
 function scrollToTop() {
@@ -303,30 +303,30 @@ document.addEventListener('pjax:complete', getWeibo);
 document.addEventListener('DOMContentLoaded', getWeibo);
 
 function getWeibo() {
-  fetch('').then(data => data.json()).then(data => {  // 这里要写上你的API!!!
-    let html = '<style>.weibo-new{background:#ff3852}.weibo-hot{background:#ff9406}.weibo-jyzy{background:#ffc000}.weibo-recommend{background:#00b7ee}.weibo-adrecommend{background:#febd22}.weibo-friend{background:#8fc21e}.weibo-boom{background:#bd0000}.weibo-topic{background:#ff6f49}.weibo-topic-ad{background:#4dadff}.weibo-boil{background:#f86400}#weibo-container{overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#weibo-container::-webkit-scrollbar{display:none}.weibo-list-item{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.weibo-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}.weibo-num{float:right}.weibo-hotness{display:inline-block;padding:0 6px;transform:scale(.8) translateX(-3px);color:#fff;border-radius:8px}</style>'
-    html += '<div class="weibo-list">'
-    let hotness = {
-      '爆': 'weibo-boom',
-      '热': 'weibo-hot',
-      '沸': 'weibo-boil',
-      '新': 'weibo-new',
-      '荐': 'weibo-recommend',
-      '音': 'weibo-jyzy',
-      '影': 'weibo-jyzy',
-      '剧': 'weibo-jyzy',
-      '综': 'weibo-jyzy'
-    }
-    for (let item of data) {
-      html += '<div class="weibo-list-item"><div class="weibo-hotness ' + hotness[(item.hot || '荐')] + '">' + (item.hot || '荐') + '</div>'
-        + '<span class="weibo-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer" style="color:#a08ed5">' + item.title + '</a></span>'
-        + '<div class="weibo-num"><span>' + item.num + '</span></div></div>'
-    }
-    html += '</div>'
-    document.getElementById('weibo-container').innerHTML = html
-  }).catch(function (error) {
-    console.log(error);
-  });
+  // fetch('').then(data => data.json()).then(data => {  // 这里要写上你的API!!!
+  //   let html = '<style>.weibo-new{background:#ff3852}.weibo-hot{background:#ff9406}.weibo-jyzy{background:#ffc000}.weibo-recommend{background:#00b7ee}.weibo-adrecommend{background:#febd22}.weibo-friend{background:#8fc21e}.weibo-boom{background:#bd0000}.weibo-topic{background:#ff6f49}.weibo-topic-ad{background:#4dadff}.weibo-boil{background:#f86400}#weibo-container{overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}#weibo-container::-webkit-scrollbar{display:none}.weibo-list-item{display:flex;flex-direction:row;justify-content:space-between;flex-wrap:nowrap}.weibo-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-right:auto}.weibo-num{float:right}.weibo-hotness{display:inline-block;padding:0 6px;transform:scale(.8) translateX(-3px);color:#fff;border-radius:8px}</style>'
+  //   html += '<div class="weibo-list">'
+  //   let hotness = {
+  //     '爆': 'weibo-boom',
+  //     '热': 'weibo-hot',
+  //     '沸': 'weibo-boil',
+  //     '新': 'weibo-new',
+  //     '荐': 'weibo-recommend',
+  //     '音': 'weibo-jyzy',
+  //     '影': 'weibo-jyzy',
+  //     '剧': 'weibo-jyzy',
+  //     '综': 'weibo-jyzy'
+  //   }
+  //   for (let item of data) {
+  //     html += '<div class="weibo-list-item"><div class="weibo-hotness ' + hotness[(item.hot || '荐')] + '">' + (item.hot || '荐') + '</div>'
+  //       + '<span class="weibo-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer" style="color:#a08ed5">' + item.title + '</a></span>'
+  //       + '<div class="weibo-num"><span>' + item.num + '</span></div></div>'
+  //   }
+  //   html += '</div>'
+  //   document.getElementById('weibo-container').innerHTML = html
+  // }).catch(function (error) {
+  //   console.log(error);
+  // });
 }
 
 /* 微博热搜 end */
@@ -674,7 +674,7 @@ if (document.body.clientWidth > 992) {
         zoom: 0.9,
         borderRadius: 5 + 'px',
         right: 55.6 + 'px',
-        nekoImg: "https://bu.dusays.com/2022/07/20/62d812db74be9.png",
+        nekoImg: "https://bu.dusays.com/2022/07/20/62d812db74be9.png", //挂件
         hoverMsg: "春天啦~",
         color: "var(--theme-color)",
         during: 500,
@@ -1119,21 +1119,17 @@ function createtime1() {
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到Fomalhaut🥝の小家!`,
+    `欢迎来到陈锦程の小家!`,
     `Future is now 🍭🍭🍭`,
     `
         
-███████  ██████  ███    ███  █████  ██      ██   ██  █████  ██    ██ ████████ 
-██      ██    ██ ████  ████ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
-█████   ██    ██ ██ ████ ██ ███████ ██      ███████ ███████ ██    ██    ██    
-██      ██    ██ ██  ██  ██ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
-██       ██████  ██      ██ ██   ██ ███████ ██   ██ ██   ██  ██████     ██   
+  
                                               
 `,
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2022 By Fomalhaut",
+    "©2022 By 陈锦程",
   ];
 
   setTimeout(
@@ -1172,7 +1168,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
+      "%c ⚡ Powered by 陈锦程 %c 你正在访问陈锦程の小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1282,8 +1278,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| 陈锦程") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('陈锦程的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
     new Vue({
       data: function () {
         this.$notify({
@@ -2476,13 +2472,13 @@ if (m == 3 && dd == 8) {//妇女节
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
-l = ["非常抱歉，因为不可控原因，博客将于明天停止运营！", "好消息，日本没了！", "美国垮了，原因竟然是川普！", "微软垮了！", "你的电脑已经过载，建议立即关机！", "你知道吗？站长很喜欢你哦！", "一分钟有61秒哦", "你喜欢的人跟别人跑了！"]
-if (m == 4 && dd == 1) {//愚人节，随机谎话
-  if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire(l[Math.floor(Math.random() * l.length)]);
-    sessionStorage.setItem("isPopupWindow", "1");
-  }
-}
+// l = ["非常抱歉，因为不可控原因，博客将于明天停止运营！", "好消息，日本没了！", "美国垮了，原因竟然是川普！", "微软垮了！", "你的电脑已经过载，建议立即关机！", "你知道吗？站长很喜欢你哦！", "一分钟有61秒哦", "你喜欢的人跟别人跑了！"]
+// if (m == 4 && dd == 1) {//愚人节，随机谎话
+//   if (sessionStorage.getItem("isPopupWindow") != "1") {
+//     Swal.fire(l[Math.floor(Math.random() * l.length)]);
+//     sessionStorage.setItem("isPopupWindow", "1");
+//   }
+// }
 if (m == 5 && dd == 1) {//劳动节
   if (sessionStorage.getItem("isPopupWindow") != "1") {
     Swal.fire("劳动节快乐\n为各行各业辛勤工作的人们致敬！");
@@ -2519,18 +2515,18 @@ if (m == 12 && dd == 25) {//圣诞节
     sessionStorage.setItem("isPopupWindow", "1");
   }
 }
-if (m == 8 && dd == 11) {//站长生日
-  if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！🥝");
-    sessionStorage.setItem("isPopupWindow", "1");
-  }
-}
-if (m == 6 && dd == 30) {//小猫咪生日
-  if (sessionStorage.getItem("isPopupWindow") != "1") {
-    Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐！🐱");
-    sessionStorage.setItem("isPopupWindow", "1");
-  }
-}
+// if (m == 8 && dd == 11) {//站长生日
+//   if (sessionStorage.getItem("isPopupWindow") != "1") {
+//     Swal.fire("祝站长" + (y - 1998).toString() + "岁生日快乐！");
+//     sessionStorage.setItem("isPopupWindow", "1");
+//   }
+// }
+// if (m == 6 && dd == 30) {//小猫咪生日
+//   if (sessionStorage.getItem("isPopupWindow") != "1") {
+//     Swal.fire("祝小猫咪" + (y - 1999).toString() + "岁生日快乐！🐱");
+//     sessionStorage.setItem("isPopupWindow", "1");
+//   }
+// }
 
 //传统节日部分
 
@@ -2789,26 +2785,28 @@ function createtime() {
   var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
   var unit = (dis / 149600000).toFixed(6);  // 天文单位
   // 网站诞生时间
-  var grt = new Date("08/09/2022 00:00:00");
-  var days = (now - grt) / 1e3 / 60 / 60 / 24,
-    dnum = Math.floor(days),
-    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
-    hnum = Math.floor(hours);
-  1 == String(hnum).length && (hnum = "0" + hnum);
-  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
-    mnum = Math.floor(minutes);
-  1 == String(mnum).length && (mnum = "0" + mnum);
-  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
-    snum = Math.round(seconds);
-  1 == String(snum).length && (snum = "0" + snum);
-  let currentTimeHtml = "";
-  (currentTimeHtml =
-    hnum < 18 && hnum >= 9
-      ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
-    document.getElementById("workboard") &&
-    (document.getElementById("workboard").innerHTML = currentTimeHtml);
-}
+//   var grt = new Date("08/09/2022 00:00:00");
+//   var days = (now - grt) / 1e3 / 60 / 60 / 24,
+//     dnum = Math.floor(days),
+//     hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
+//     hnum = Math.floor(hours);
+//   1 == String(hnum).length && (hnum = "0" + hnum);
+//   var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
+//     mnum = Math.floor(minutes);
+//   1 == String(mnum).length && (mnum = "0" + mnum);
+//   var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
+//     snum = Math.round(seconds);
+//   1 == String(snum).length && (snum = "0" + snum);
+//   let currentTimeHtml = "";
+//   (currentTimeHtml =
+//     hnum < 18 && hnum >= 9
+//       ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
+//       : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
+//     document.getElementById("workboard") &&
+//     (document.getElementById("workboard").innerHTML = currentTimeHtml);
+// }
+
+//adou
 // 设置重复执行函数，周期1000ms
 setInterval(() => {
   createtime();
@@ -3174,12 +3172,12 @@ if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
 } else {
   document.getElementById("defineBg").innerText = `:root{
-    --default-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/dm14.webp);
-    --darkmode-bg:url(https://lskypro.acozycotage.net/Fomalhaut/img/yuanshen1.webp);
-    --mobileday-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/snow.webp);
-    --mobilenight-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/mb8.webp);
+    --default-bg: url(https://s1.vika.cn/space/2023/11/27/90cfa930b85d460fb097e9f832e49045);
+    --darkmode-bg:url(https://cdn.statically.io/gh/adoujincheng/pic_bed@main/2023/1110001.png);
+    --mobileday-bg: url(https://s1.vika.cn/space/2023/11/27/c96bcf5881a14b6c906bc923cd5cde09);
+    --mobilenight-bg: url(https://cdn.statically.io/gh/adoujincheng/pic_bed@main/2023/11v2-ef9d2b09cf759a8d15c609262adcdbc0_r.jpg);
   }`;
-}
+}// adou背景
 // 切换背景主函数
 function changeBg(s) {
   // 自定义颜色框
@@ -3407,9 +3405,10 @@ function createWinbox() {
 <h3>1. 二次元</h3>
 <details class="folding-tag" cyan><summary> 查看二次元背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)')"></a></div>
+              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://cdn.statically.io/gh/adoujincheng/pic_bed@main/2023/1110001.png)" class="imgbox" onclick="changeBg('url(https://cdn.statically.io/gh/adoujincheng/pic_bed@main/2023/1110001.png)')"></a></div>
               </div>
             </details>
+//二次元背景adou
 
 
 <h3>2. 风景</h3>
@@ -3464,7 +3463,7 @@ function createWinbox() {
 <h3>8. 自定义背景</h3>
 <details class="folding-tag" cyan><summary> 设置自定义背景 </summary>
               <div class='content'>
-              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接，如 https://source.fomal.cc/img/home_bg.webp"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button></center></p>
+              <p><center><input type="text" id="pic-link" size="70%" maxlength="1000" placeholder="请输入有效的图片链接，如 https://cdn.statically.io/gh/adoujincheng/pic_bed@main/2023/1110001.png"></center></p><p><center><button type="button" onclick="getPicture()" style="background:var(--theme-color);width:35%;padding: 5px 0px 7px 0px;border-radius:30px;color:white;line-height:2;">🌈切换背景🌈</button></center></p>
               </div>
             </details>
 
